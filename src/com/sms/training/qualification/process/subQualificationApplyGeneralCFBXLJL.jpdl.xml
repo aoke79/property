@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="subQualificationApplyGeneralCFBXLJL" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="23,82,48,48" name="start1">
+      <transition g="-26,-29" name="实施培训" to="实施培训"/>
+   </start>
+   <task g="133,79,92,52" name="实施培训" assignee="#{JiDui}">
+      <transition g="-30,-28" name="资质更新" to="资质更新"/>
+   </task>
+   <task assignee="#{GsZhuanYuanOver}" g="293,80,92,52" name="资质更新">
+      <transition g="-14,-27" name="结束" to="结束"/>
+   </task>
+   <end g="451,83,48,48" name="结束"/>
+</process>

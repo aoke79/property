@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="qualificationApplyTeacherFXJYMNJFX" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="11,120,48,48" name="start1">
+      <transition g="-61,-32" name="训练专员下达训练计划" to="训练专员下达训练计划"/>
+   </start>
+   <task assignee="#{FgsZhuanYuanSb}" g="171,117,150,52" name="训练专员下达训练计划">
+      <transition g="-14,-35" name="结束" to="end1"/>
+   </task>
+   <end g="394,121,48,48" name="end1"/>
+</process>

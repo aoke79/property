@@ -1,0 +1,60 @@
+@charset "utf-8";
+body{ margin:0px; padding:0px; font-size:12px;}
+a img{ border:none}
+.partol_k{ width:1076px; height:600px; margin:0 auto}
+.partol_nr{ float:left; width:1076px; height:493px; background:url(../images/nr_bg.jpg) repeat-x;}
+.partol_bt{ float:left; width:1076px; height:107px;}
+.partol_top{ float:left; color:#004a00; width:1060px; height:30px;}
+.welcome_wz{ font-size:12px; color:#004a00; float:right; width:auto; height:30px; line-height:30px;}
+.welcome_wz a{ color:#004a00; text-decoration:none; font-size:12px; }
+.top_ico{ float:right; padding-left:17px; padding-top:8px; padding-right:5px;}
+.partol_content{ float:left; width:886px; height:auto; padding-left:70px;}
+/*.partol_ico_k{ float:left; width:145px; height:88px; padding-top:50px;}*/
+.partol_ico_k{ float:left; width:125px; height:88px; padding-top:50px;}
+/*.partol_img{ padding-left:40px;float:leftl; }*/
+.partol_img{ padding-left:55px;float:leftl; }
+.partol_wz_mc{  font-family:"微软雅黑";color:#333; float:left; width:103px; padding-left:40px; height:32px; line-height:30px; text-align:center
+}
+.partol_wz_mc a{ text-decoration:none; color:#333; font-family:"微软雅黑"}
+
+.partol_wz_mc .nothas{ text-decoration:none; color:#a0a0a0; font-family:"微软雅黑"}
+
+.partol_wz_mc_1{  font-family:"微软雅黑";color:#333; float:left; width:103px; padding-left:40px; height:32px; line-height:16px; text-align:center
+}
+.partol_wz_mc_1 a{ text-decoration:none; color:#333; font-family:"微软雅黑"}
+
+.partol_wz_mc_1 .nothas{ text-decoration:none; color:#a0a0a0; font-family:"微软雅黑"}
+
+/*审计  弹出层*/
+.partol_alert_welcome{  z-index:1002; width: 350px;height: 150px;background: url(../images/shenji_bg.gif) 0 0 no-repeat;position: absolute;left: 490px;top: 216px;overflow: hidden;}
+.partol_alert_welcome .hello_someone{margin: 23px 0px 0px 30px;height: 16px;overflow: hidden;}
+.hello_someone span{float: left;height: 14px;overflow: hidden;}
+.hello_someone .ninhao{font-size: 13px\9;float: left\9;margin-top: 1px\9;*margin-top: 2px;}
+.partol_alert_welcome div{margin: 12px 0px 0px 30px;height: 16px;overflow: hidden;}
+.partol_alert_welcome input{float:left;background: url(../images/allright.gif) 0 0 no-repeat;width: 60px;height: 20px;border: none;cursor: pointer;margin: 20px 0px 0px 30px;}
+.partol_alert_welcome .we_goout{background: url(../images/goout.gif) 0 0 no-repeat;}
+
+
+/*邮件发送密码  弹出层*/
+.partol_alert_mail{  z-index:1202; width: 380px;height: 165px;background: url(../images/shenji_bg.gif) 0 0 ;position: absolute;left: 490px;top: 216px;overflow: hidden;}
+.partol_alert_mail .hello_somemail{margin: 23px 0px 0px 15px;height: 16px;overflow: hidden;}
+.hello_mail span{float: left;height: 14px;overflow: hidden;}
+.hello_mail .ninhao{font-size: 13px\9;float: left\9;margin-top: 1px\9;*margin-top: 2px;}
+.partol_alert_mail div{margin: 12px 0px 0px 30px;height: 16px;overflow: hidden;}
+.partol_alert_mail .we_sure{float:left;background: url(../images/allright.gif) 0 0 no-repeat;width: 60px;height: 20px;border: none;cursor: pointer;margin: 20px 0px 0px 30px;}
+.partol_alert_mail .we_goout{background: url(../images/goout.gif) 0 0 no-repeat;}
+
+
+
+/*修改密码  弹出层*/
+.partol_alert_pass{ z-index:1002; width: 370px;height:230px;background: url(../images/password_bg.gif) 0 0 no-repeat;position: absolute;left: 472px;top: 198px;overflow: hidden;}
+.partol_alert_pass div{width: 280px;height: 32px;margin: 27px 0px 0px 55px;overflow: hidden;}
+.partol_alert_pass div span{*float:left;*margin-top: 8px;}
+.partol_alert_pass .new_poss{margin: 10px 0px 0px 55px;}
+.partol_alert_pass .new_poss span{color: #e60012;}
+.partol_alert_pass input{width: 214px;height: 24px;border: 1px solid #d2d2d2;}
+.partol_alert_pass .all_poss{margin: 10px 0px 0px 31px;width: 304px;}
+.partol_alert_pass .all_poss span{color: #e60012;}
+.partol_alert_pass p{margin-left: 40px;margin-top:15px; color: red;width: 284px;height: 16px;overflow: hidden;}
+.partol_alert_pass .poss_xiugai{background: url(../images/allright.gif) 0 0 no-repeat;width: 60px;height: 20px;border: none;cursor: pointer;margin: 15px 0px 0px 0px;*float: left;*margin-top: -6px;}
+.partol_alert_pass .we_goout{background: url(../images/goout.gif) 0 0 no-repeat;width: 60px;height: 20px;border: none;cursor: pointer;margin: 15px 0px 0px 28px;*float: left;*margin-top: -6px;}

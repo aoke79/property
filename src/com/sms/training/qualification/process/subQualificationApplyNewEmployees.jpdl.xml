@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="subQualificationApplyNewEmployees" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="9,38,48,42" name="start1">
+      <transition g="-38,-36" name="下达训练计划" to="下达训练计划"/>
+   </start>
+   <task g="125,38,92,45" name="下达训练计划">
+      <transition g="-25,-36" name="教员填单" to="教员填单"/>
+   </task>
+   <task assignee="#{jiaoyuan}" form="tf-qua-apply/tf-qua-apply-new-employees!toJiaoYuanForm.do" g="277,37,77,47" name="教员填单">
+      <transition g="-36,-36" name="检查员填单" to="检查员填单"/>
+   </task>
+   <task assignee="#{JianChaYuan}" form="tf-qua-apply/tf-qua-apply-new-employees!toJianChaYuanForm.do" g="405,35,87,49" name="检查员填单">
+      <transition g="-47,-17" name="to fork" to="fork"/>
+   </task>
+   <fork g="425,117,48,48" name="fork">
+      <transition g="-71,-17" name="本场训练" to="本场训练"/>
+      <transition g="12,-16" name="执照专员CP签注" to="执照专员CP签注"/>
+   </fork>
+   <task assignee="#{FgsZy}" form="tf-qua-apply/tf-qua-apply-new-employees!toFgsZyForm.do" g="307,174,95,45" name="本场训练">
+      <transition g="-55,5" name="to join" to="join"/>
+   </task>
+   <task assignee="#{FgsZhuRen}" g="504,166,109,52" name="执照专员CP签注">
+      <transition g="3,4" name="to join" to="join"/>
+   </task>
+    <join g="432,211,48,48" name="join">
+      <transition g="-134,-3" name="公司飞管专员发文确认" to="公司飞管专员发文确认"/>
+   </join>
+   <task assignee="#{GsZhuanYuanOver}" form="tf-qua-apply/tf-qua-apply-new-employees!toGsZhuanYuanOverForm.do" g="388,286,145,46" name="公司飞管专员发文确认">
+      <transition g="-40,-9" name="结束" to="结束"/>
+   </task>
+   <end g="439,362,48,44" name="结束"/>
+</process>

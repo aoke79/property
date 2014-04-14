@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="subQualificationApplyFtdTeacher" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="50,106,48,54" name="start1">
+      <transition assignee="#{ZlkzZhuanYuan}" g="-73,-43" name="质量控制专员登记试讲评估结果" to="质量控制专员登记试讲评估结果"/>
+   </start>
+   <task g="223,104,198,52" name="质量控制专员登记试讲评估结果">
+      <transition g="-88,-43" name="计划控制室质量控制经理审核报批" to="计划控制室质量控制经理审核报批"/>
+   </task>
+   <task assignee="#{ZlkzJingLi}" form="tf-qua-apply/tf-qua-apply!toFgsZhuanYuanForm.do" g="515,103,202,52" name="计划控制室质量控制经理审核报批">
+      <transition g="-164,-15" name="计划控制室高级经理审核报批" to="计划控制室高级经理审核报批"/>
+   </task>
+   <task assignee="#{ZlkzGaoJiJingLi}" form="tf-qua-apply/tf-qua-apply!toFgsJingLiForm.do" g="530,226,177,52" name="计划控制室高级经理审核报批">
+      <transition g="-51,-45" name="培训部领导审核报批" to="培训部领导审核报批"/>
+   </task>
+   <task assignee="#{PxbLingDao}" form="tf-qua-apply/tf-qua-apply!toFgsLingDaoForm.do" g="342,226,133,52" name="培训部领导审核报批">
+      <transition g="-44,-45" name="质量控制专员申报" to="质量控制专员申报"/>
+   </task>
+   <task assignee="#{ZlkzZhuanYuanSb}" form="tf-qua-apply/tf-qua-apply!toGsZhuanYuanForm.do" g="185,226,126,52" name="质量控制专员申报">
+      <transition g="-44,-47" name="公司飞管专员申报" to="公司飞管专员申报"/>
+   </task>
+   <task assignee="#{GsZhuanYuanSb}" form="tf-qua-apply/tf-qua-apply!toGsJingLiForm.do" g="26,226,134,52" name="公司飞管专员申报">
+      <transition g="5,-18" name="公司飞管高级经理审核报批" to="公司飞管高级经理审核报批"/>
+   </task>
+   <task assignee="#{GsGaoJiJingLi}" form="tf-qua-apply/tf-qua-apply!toGsLingDaoForm.do" g="10,366,165,52" name="公司飞管高级经理审核报批">
+      <transition g="-50,-47" name="公司飞管领导审核" to="公司飞管领导审核"/>
+   </task>
+   <task assignee="#{GsLingDao}" form="tf-qua-apply/tf-qua-apply!toGsZhuanYuanSbForm.do" g="214,368,114,52" name="公司飞管领导审核">
+      <transition g="-49,-44" name="公司飞管专员发文" to="公司飞管专员发文"/>
+   </task>
+   <task assignee="#{GsZhuanYuanFw}" g="367,367,119,52" name="公司飞管专员发文">
+      <transition g="-62,-42" name="质量控制专员资质更新" to="质量控制专员资质更新"/>
+   </task>
+   <task assignee="#{ZlkzZhuanYuanGx}" g="516,364,137,52" name="质量控制专员资质更新">
+      <transition g="-17,-44" name="结束" to="结束"/>
+   </task>
+   <end g="671,367,68,35" name="结束"/>
+</process>

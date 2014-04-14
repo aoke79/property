@@ -1,0 +1,19 @@
+/**/
+.btn {	BORDER-RIGHT: #7b9ebd 1px solid;PADDING-RIGHT: 2px;BORDER-TOP: #7b9ebd 1px solid;PADDING-LEFT: 2px;
+	FONT-SIZE: 12px;BORDER-LEFT: #7b9ebd 1px solid;CURSOR: hand;COLOR: black;PADDING-TOP: 2px;BORDER-BOTTOM: #7b9ebd 1px solid;}
+/**/
+.inputText {font-family: verdana;background-color: #CCCCFF;border-bottom: #FFFFFF 1px solid;border-left: #CCCCCC 1px solid;
+	border-right: #FFFFFF 1px solid;border-top: #CCCCCC 1px solid;font-size: 12px;}
+/**/
+.inputText-bor {font-family:verdana;background-color:#F0F8FF;font-size: 12px;border: 1px solid #333333;}
+
+<!--´íÎó±êÇ© -->
+.divborderandcolor{MARGIN-RIGHT: auto;	MARGIN-LEFT: auto;width:95%;height:14px;color:#ff0000;border-color:#33CC00;	
+	border-width: 2px;border-style:solid;background-color: #ccffff;}
+
+<!-- ul±êÇ© -->
+ul{padding-bottom:0px; list-style-type:none;FLOAT: left;PADDING-LEFT: 0px;PADDING-BOTTOM: 0px;}
+ul,li{margin:0;padding:0}
+
+.mustInput {color: #FF0000}
+	

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<!-- 定义访问后缀 -->
+	<constant name="struts.action.extension" value="do" />
+	<!-- 设置默认编码 -->
+	<constant name="struts.i18n.encoding" value="UTF-8"/>
+	<constant name="struts.custom.i18n.resources" value="sinoframe"></constant>
+    <!-- 开启动态方法调用 -->   
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <constant name="struts.convention.package.locators" value="action" />
+    <constant name="struts.convention.result.path" value="/" />
+    <constant name="struts.multipart.maxSize" value="2147483647"/>
+    <!-- 以下两项在生产模式中要去掉 -->   
+    <constant name="struts.devMode" value="true"/>    
+    <constant name="struts.convention.classes.reload" value="true" />
+    
+    <!-- add by jilili 2011/5/3 start -->
+   <package name="sinoframe-default" extends="json-default"> 
+   	<interceptors> 
+    		<interceptor name="loginInterceptor" class="com.sinoframe.common.interceptor.LoginInterceptor"/> 
+ 			<interceptor-stack name="sinoframe-default"> 
+ 				<interceptor-ref name="loginInterceptor"/> 
+ 				<interceptor-ref name="defaultStack"/> 
+ 			</interceptor-stack> 
+     	</interceptors> 
+     	<default-interceptor-ref name="sinoframe-default"/> 
+     	<global-results> 
+     		<result name="not login" type="redirect">/commonFiles/redirect.jsp</result> 
+     	</global-results> 
+
+     </package> 
+    <!-- add by jilili 2011/5/3 end -->
+    <!-- add by niujingwei 2011/5/3 start -->
+   <package name="file-default" extends="struts-default">
+    	<interceptors>
+			<interceptor-stack name="file-default">
+				<interceptor-ref name="fileUpload">
+				   <!-- 配置允许上传的文件类型 -->
+				   <!-- 
+				   <param name="allowedTypes">
+				      image/png,image/gif,image/jpeg,image/jpg
+				   </param>
+				    -->
+				    <!-- 配置允许上传的文件大小 -->
+				   <param name="maximumSize">
+				       2147483647
+				   </param>
+				</interceptor-ref>
+				<interceptor-ref name="defaultStack"/>
+			</interceptor-stack>
+    	</interceptors>
+    	<default-interceptor-ref name="file-default"/>
+    </package>
+    <!-- add by niujingwei 2011/5/3 end -->
+    <!-- add by FuZhongYue 2011-06-08 start -->
+    <!-- 操作拦截器 -->
+    <package name="operateInterceptor" extends="struts-default">
+    	<interceptors>
+    		<interceptor name="action-catcher" class="com.sinoframe.common.interceptor.OperateInterceptor"/>
+    		<interceptor name="loginInterceptor" class="com.sinoframe.common.interceptor.LoginInterceptor"/>
+    		<interceptor-stack name="default-catcher">
+    			<interceptor-ref name="action-catcher"/>
+    			<interceptor-ref name="loginInterceptor"/>
+    			<interceptor-ref name="defaultStack"/>
+    		</interceptor-stack>
+    	</interceptors>
+    	<default-interceptor-ref name="default-catcher"/>
+    </package>
+    <!-- add by FuZhongYue 2011-06-08 end -->
+    <package name="login" extends="struts-default">
+    	<interceptors>
+	    	<!--<interceptor name="defaultInterceptor" class="com.sinoframe.common.interceptor.DefaultInterceptor"/>-->
+	    	<interceptor-stack name="default-catcher">
+	    		<!--<interceptor-ref name="defaultInterceptor"/>-->
+	    		<interceptor-ref name="defaultStack"/>
+	    	</interceptor-stack>
+    	</interceptors>
+    	<default-interceptor-ref name="default-catcher"/>
+    </package>
+</struts>

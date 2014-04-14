@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="MyProject" default="starttomcat" basedir=".">
+  
+  <property name="jboss.dir" value="D:\jboss\server\default\deploy"/>
+  <property name="webapp.dir" value="D:\property\www"/>
+  <property name="webapp.url" value="http://127.0.0.1:8080/www"/>
+	
+  <target name="init" >
+  	<echo message="Init ...."/>
+	<copy todir="${tomcat.dir}\common\lib">
+	  <fileset dir="${webapp.dir}\WEB-INF\lib" casesensitive="yes">
+		 <filename name="classes12.jar"/>		 
+	  </fileset>
+	</copy>
+  	<copy todir="${tomcat.dir}\conf\Catalina\localhost">
+  	  <fileset dir="${webapp.dir}\WEB-INF\config" casesensitive="yes">
+  		 <filename name="cert.xml"/>		 
+  	  </fileset>
+  	</copy>
+	<echo message="Init OK !"/>
+  </target>
+	
+  <target name="starttomcat" depends="stoptomcat,init">    
+    <echo message="Start Tomcat ...."></echo>
+    <exec dir="${tomcat.dir}\bin" executable="cmd">
+      <env key="CATALINA_HOME" value="${tomcat.dir}"/>
+      <arg value="/c startup.bat"/>
+    </exec> 
+  	<echo message="Start Tomcat OK !"></echo>
+  </target>
+  
+  <target name="runapp" depends="starttomcat">
+	<start url="${webapp.url}"
+	  username="admin"
+	  password=""
+	  path="/www"/>
+  </target>
+
+  <target name="stoptomcat">
+    <echo message="Shutdown Tomcat ...."></echo>
+    <exec dir="${tomcat.dir}\bin" executable="cmd">
+      <env key="CATALINA_HOME" value="${tomcat.dir}"/>
+      <arg value="/c shutdown.bat"/>
+    </exec> 
+    <echo message="Stop Tomcat OK !"></echo>
+  </target>
+
+</project> 

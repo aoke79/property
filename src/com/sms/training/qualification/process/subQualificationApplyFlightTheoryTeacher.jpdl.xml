@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="subQualificationApplyFlightTheoryTeacher" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="48,68,48,48" name="start1">
+      <transition assignee="#{ZlkzZhuanYuan}" g="-87,-43" name="质量控制专员登记试讲评估结果" to="质量控制专员登记试讲评估结果"/>
+   </start>
+   <task g="194,65,195,52" name="质量控制专员登记试讲评估结果">
+      <transition g="-92,-42" name="计划控制室质量控制经理审核报批" to="计划控制室质量控制经理审核报批"/>
+   </task>
+   <task assignee="#{ZlkzJingLi}" g="467,65,214,52" name="计划控制室质量控制经理审核报批">
+      <transition g="-175,-14" name="计划控制室高级经理审核报批" to="计划控制室高级经理审核报批"/>
+   </task>
+   <task assignee="#{ZlkzGaoJiJingLi}" g="474,178,201,52" name="计划控制室高级经理审核报批">
+      <transition g="-50,-43" name="培训部领导审核报批" to="培训部领导审核报批"/>
+   </task>
+   <task assignee="#{PxbLingDao}" g="224,177,140,52" name="培训部领导审核报批">
+      <transition g="-60,-44" name="公司技术委员会审批" to="公司技术委员会审批"/>
+   </task>
+   <task assignee="#{GsjsWeiYuanHuiSp}" g="28,177,134,52" name="公司技术委员会审批">
+      <transition g="14,-8" name="质量控制专员资质更新" to="质量控制专员资质更新"/>
+   </task>
+   <task assignee="#{ZlkzZhuanYuanGx}" g="25,283,139,52" name="质量控制专员资质更新">
+      <transition g="-15,-29" name="结束" to="结束"/>
+   </task>
+   <end g="274,286,48,48" name="结束"/>
+</process>

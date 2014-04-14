@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="subQualificationApplyFXTXJCY" xmlns="http://jbpm.org/4.4/jpdl">
+   <start name="start1" g="35,72,48,48">
+      <transition name="下达训练计划" to="下达训练计划" g="-42,-37"/>
+   </start>
+   <task name="下达训练计划" g="179,70,92,52">
+      <transition name="教员填单" to="教员填单" g="-32,-28"/>
+   </task>
+   <task name="教员填单" g="368,68,92,52" assignee="#{jiaoyuan}">
+      <transition name="检查员填单" to="检查员填单" g="-32,-27"/>
+   </task>
+   <task name="检查员填单" g="550,69,92,52" assignee="#{JianChaYuan}">
+      <transition name="总飞行师审批" to="总飞行师审批" g="-95,-17"/>
+   </task>
+   <task name="总飞行师审批" g="555,186,92,52" assignee="#{Zfxs}">
+      <transition name="公司飞管专员发文确认" to="公司飞管专员发文确认" g="-143,-17"/>
+   </task>
+   <task name="公司飞管专员发文确认" g="528,293,146,52" assignee="#{GsZhuanYuanOver}"/>
+</process>

@@ -1,0 +1,137 @@
+body tr,td {
+	font-size: 9pt;
+	color: #666;
+	line-height: 160%;
+}
+
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	overflow: hidden;
+}
+
+.table01 {
+	background-image: url(../images/bg_loginmain.gif);
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	background-repeat: no-repeat;
+}
+
+.table02 {
+	background-image: url(../images/bg_loginbg.png);
+	
+}
+
+.table03 {
+	background-image: url(../images/bg_login.gif);
+	background-repeat: no-repeat;
+}
+
+.table04 td {
+	font-weight: bold;
+	color: #666;
+	font-size: 9pt;
+}
+
+.td01 {
+	font-weight: bold;
+	color: #ff6600;
+	font-size: 9pt;
+}
+
+.td02 {
+	background-image: url(../images/bg_top.gif);
+}
+
+.td03 {
+	color: #FFF;
+	font-size: 9pt;
+}
+
+.td04 {
+	background-image: url(../images/bg_menu.gif);
+}
+
+/*onmouseover*/
+.size1 {
+	font-size: 9pt;
+	color: #FFF;
+	background-image: url(../images/bg_hover.gif);
+	background-repeat: no-repeat;
+	background-position: bottom;
+	font-weight: bold;
+	text-align: center;
+	cursor: hand;
+}
+
+/*onmouseout*/
+.size2 {
+	font-size: 9pt;
+	color: #666;
+	background-image: url(../images/bg_link.gif);
+	background-repeat: no-repeat;
+	background-position: bottom;
+	text-align: center;
+	margin-top: 20px;
+	vertical-align: bottom;
+	cursor: hand;
+}
+
+.input01 {
+	border: 1px solid #d8ced8;
+	color: #666;
+	height: 19px;
+	width: 90%;
+	font-size: 9pt;
+}
+
+.select01 {
+	line-height: 9pt;
+	color: #666;
+	width: 90%;
+}
+
+a:link {
+	text-decoration: none;
+	font-size: 9pt;
+	color: #6699cc;
+}
+a:visited {
+	text-decoration: none;
+	font-size: 9pt;
+	color: #6699cc;
+}
+a:hover {
+	text-decoration: underline;
+	font-size: 9pt;
+	color: #699;
+}
+a:active {
+	text-decoration: none;
+}
+
+a.kind1:link {
+	color: #FFF;
+	text-decoration: none;
+}
+a.kind1:visited {
+	text-decoration: none;
+	color: #FFF;
+}
+a.kind1:hover {
+	color: #FFF;
+	text-decoration: underline;
+}
+a.kind1:active {
+	text-decoration: none;
+}
+
+.tableC {
+	background-image: url(../images/img_sysloginbottom.png);
+	height: 56px;
+	margin: 0 auto;
+}
+

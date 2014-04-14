@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="subQualificationApplyInspectorDelegate" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="9,180,48,44" name="start">
+      <transition g="-37,-33" name="公司领导审批" to="公司领导审批"/>
+   </start>
+   <task assignee="#{GsLingDao}" g="129,179,119,47" name="公司领导审批">
+      <transition g="-63,-33" name="公司飞管专员发文确认" to="公司飞管专员发文确认"/>
+   </task>
+   <task assignee="#{GsZhuanYuanOver}" g="333,179,145,45" name="公司飞管专员发文确认">
+      <transition g="-15,-36" name="结束" to="结束"/>
+   </task>
+   <end g="543,179,48,48" name="结束"/>
+</process>

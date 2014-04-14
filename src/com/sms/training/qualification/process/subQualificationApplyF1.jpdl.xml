@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="subQualificationApplyF1" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="32,144,48,48" name="start1">
+      <transition g="-36,-35" name="下达训练计划" to="下达训练计划"/>
+   </start>
+   <end g="518,409,56,45" name="结束"/>
+   <task assignee="#{JianChaYuan}" form="tf-qua-apply/tf-qua-apply-f1!toJianChaYuanForm.do" g="497,140,85,52" name="检查员填单">
+      <transition g="-223,-9" name="分公司级技术委员会办公室主任审核报批" to="分公司级技术委员会办公室主任审核报批"/>
+   </task>
+   <task assignee="#{FgsZhuRen}" form="tf-qua-apply/tf-qua-apply-f1!toFgsZhuRenForm.do" g="412,239,257,52" name="分公司级技术委员会办公室主任审核报批">
+      <transition g="-129,-8" name="公司飞管专员发文确认" to="分公司飞管专员发文确认"/>
+   </task>
+   <task assignee="#{GsZhuanYuanOver}" form="tf-qua-apply/tf-qua-apply-f1!toGsZhuanYuanOverForm.do" g="448,331,185,46" name="分公司飞管专员发文确认">
+      <transition g="-42,-6" name="结束" to="结束"/>
+   </task>
+   <task assignee="#{jiaoyuan}" form="tf-qua-apply/tf-qua-apply-f1!toJiaoYuanForm.do" g="337,140,77,52" name="教员填单">
+      <transition g="-33,-33" name="检查员填单" to="检查员填单"/>
+   </task>
+   <task g="166,141,92,52" name="下达训练计划">
+      <transition g="-22,-35" name="教员填单" to="教员填单"/>
+   </task>
+</process>

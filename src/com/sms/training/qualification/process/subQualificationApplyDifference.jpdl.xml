@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="subQualificationApplyDifference" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="18,146,40,28" name="start1">
+      <transition g="-36,-30" name="下达训练计划" to="下达训练计划"/>
+   </start>
+   <task g="143,146,93,48" name="下达训练计划">
+      <transition g="-27,-27" name="教员填单" to="教员填单"/>
+   </task>
+   <task assignee="#{jiaoyuan}" form="tf-qua-apply/tf-qua-apply-difference!toJiaoYuanForm.do" g="298,143,83,50" name="教员填单">
+      <transition g="-32,-30" name="检查员填单" to="检查员填单"/>
+   </task>
+   <task assignee="#{JianChaYuan}" form="tf-qua-apply/tf-qua-apply-difference!toJianChaYuanForm.do" g="452,145,115,47" name="检查员填单">
+      <transition g="-224,-7" name="分公司级技术委员会办公室主任审核报批" to="分公司级技术委员会办公室主任审核报批"/>
+   </task>
+   <task assignee="#{FgsZhuRen}" form="tf-qua-apply/tf-qua-apply-difference!toFgsZhuRenForm.do" g="392,230,239,49" name="分公司级技术委员会办公室主任审核报批">
+      <transition g="-141,-9" name="分公司飞管专员发文确认" to="分公司飞管专员发文确认"/>
+   </task>
+   <task assignee="#{GsZhuanYuanOver}" form="tf-qua-apply/tf-qua-apply-difference!toGsZhuanYuanOverForm.do" g="429,318,171,48" name="分公司飞管专员发文确认">
+      <transition g="-35,-6" name="结束" to="结束"/>
+   </task>
+   <end g="493,401,53,45" name="结束"/>
+</process>

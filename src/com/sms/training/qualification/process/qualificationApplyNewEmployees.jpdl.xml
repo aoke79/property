@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="qualificationApplyNewEmployees" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="20,84,48,48" name="开始">
+      <transition g="-34,-39" name="训练申请" to="训练申请"/>
+   </start>
+   <task assignee="#{JiDui}" g="151,79,88,52" name="训练申请">
+      <transition g="-94,-43" name="公司飞管执照专员办理证照资格申报" to="公司飞管执照专员办理证照资格申报"/>
+   </task>
+    <task assignee="#{GsZhuanYuan}" form="tf-qua-apply/tf-qua-apply-new-employees!toGsZhuanYuanSbForm.do" g="327,79,227,52" name="公司飞管执照专员办理证照资格申报">
+      <transition g="-15,-34" name="结束" to="结束"/>
+   </task>
+   <end g="630,80,48,45" name="结束"/>
+</process>

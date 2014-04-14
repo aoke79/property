@@ -1,0 +1,878 @@
+.noclick {
+	cursor: text;
+}
+.pagePanelTable {
+	margin: 5px auto;
+	width: 97%;
+	border-bottom: 1px solid #9ebcc3;
+	
+}
+.pagePanelTable input {
+	width: 80%;
+}
+.blockPanelTable {
+	width: 100%;
+	border: 1px solid #9ebcc3;
+	border-top: none;
+	border-bottom: none;
+	border-right: none;
+}
+.blockPanelTable .tTitle {
+	border-right: 1px solid #9ebcc3;
+	padding-left:15px;
+	background-color: #bbdcf9;
+	color: #183152;
+	font-weight: bold;
+}
+/*#d0e4f2#183152#9bbfc9*/
+.blockPanelTable .sTitle {
+	border-right: 1px solid #9ebcc3;
+	padding-left:15px;
+	background-color: #f6f6f6;
+	color: #183152;
+}
+.blockPanelTable .risk {
+	border-right: 1px solid #9ebcc3;
+	background-color: #f6f6f6;
+	color: #183152;
+}
+
+.blockPanelTable .kTitle {
+	border-right: 1px solid #9ebcc3;
+	padding-left:15px;
+	background-color: #cadfe5;
+	color: #183152;
+}
+
+.blockPanelPadding {
+	padding: 6px;
+}
+
+.blockPanelTable .eTitle {
+	width: 13.3%;
+	border-top: 1px solid #9ebcc3;
+	border-right: 1px solid #9ebcc3;
+	padding: 5px;
+	padding-left:10px;
+}
+.blockPanelTable .eBody {
+	width: 20%;
+	border-top: 1px solid #9ebcc3;
+	border-right: 1px solid #9ebcc3;
+	padding: 5px;
+}
+.blockPanelTable .nTitle {
+	width: 14.3%;
+	border-top: 1px solid #9ebcc3;
+	border-right: 1px solid #9ebcc3;
+	padding: 5px;
+	padding-left:10px;
+}
+.blockPanelTable .nBody {
+	width: 19%;
+	border-top: 1px solid #9ebcc3;
+	border-right: 1px solid #9ebcc3;
+	padding: 5px;
+}
+.blockPanelTable .mTitle {
+	width: 11%;
+	border-top: 1px solid #9ebcc3;
+	border-right: 1px solid #9ebcc3;
+	padding: 5px;
+	padding-left:10px;
+}
+.blockPanelTable .mBody {
+	width: 15%;
+	border-top: 1px solid #9ebcc3;
+	border-right: 1px solid #9ebcc3;
+	padding: 5px;
+}
+.blockPanelTable .mItem {
+	width: 5%;
+	border-top: 1px solid #9ebcc3;
+	border-right: 1px solid #9ebcc3;
+	padding: 5px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.mItem span {
+	cursor: pointer;
+	text-decoration: underline;
+}
+.spanHover {
+	cursor: pointer;
+	text-decoration: none;
+	color: red;
+}
+
+span .pointText{
+	float:left;
+	padding: 5px;
+}
+
+.blockPanelTable .cTitle {
+	width: 17%;
+	border-top: 1px solid #9ebcc3;
+	border-right: 1px solid #9ebcc3;
+	padding: 5px;
+	padding-left: 10px;
+}
+.blockPanelTable .risky {
+	border-top: 1px solid #9ebcc3;
+	border-right: 1px solid #9ebcc3;
+	padding: 5px;
+}
+.blockPanelTable .cBody {
+	width: 32%;
+	border-top: 1px solid #9ebcc3;
+	border-right: 1px solid #9ebcc3;
+	padding: 5px;
+}
+.blockPanelTable .rBody {
+	width: 32%;
+	border-top: 1px solid #9ebcc3;
+	border-right: 1px solid #9ebcc3;
+}
+.blockPanelTable .bBody {
+	width: 72%;
+	border-top: 1px solid #9ebcc3;
+	border-right: 1px solid #9ebcc3;
+	padding: 5px;
+}
+.innerPanelTable {
+	width: 100%;
+}
+
+.topOnly {
+	border-top: 1px solid #9ebcc3;
+}
+
+.iTitle {
+	padding: 5px;
+	border-left: 1px solid #9ebcc3;
+	text-align: center;
+}
+.iTitleF {
+	padding: 5px;
+	text-align: center;
+}
+.iTitleMax {
+	padding: 5px;
+	text-align: center;
+}
+.iBody {
+	border-top: 1px solid #9ebcc3;
+	padding: 5px;
+	border-left: 1px solid #9ebcc3;
+	text-align: center;
+}
+.iBodyF {
+	border-top: 1px solid #9ebcc3;
+	padding: 5px;
+	text-align: center;
+}
+
+.diverse {
+	background: url(../images/turn.png) no-repeat center 50%;
+	width: 30px;
+	height: 30px;
+}
+.diverse span {
+	cursor: pointer;
+	color: #4cc76f;
+	font-size: 12px;
+	padding: 10px;
+		
+}
+.reasonadd {
+	background: url(../images/smart_add.gif);
+}
+.chooser {
+	background: url(../images/choose.png);
+}
+.chooser span {
+	cursor: pointer;
+	color: #cccccc;
+	padding-top: 2px;
+	padding-left: 5px;
+	padding-right: 5px;
+	
+}
+.chooser span:hover{
+	text-decoration: none;
+}
+
+.reasonadd span {
+	cursor: pointer;
+	color: #4cc76f;
+	padding-top: 2px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.simpleTable {
+	margin: 5px auto;
+	border: 1px solid #9ebcc3;
+	border-left: none;
+	border-bottom: none;
+}
+
+.mainTitle {
+	padding-left: 10px;
+	background-color: #e9f0f2;
+	border-left: 1px solid #9ebcc3;
+	border-bottom: 1px solid #9ebcc3;
+	color: #183152;
+}
+
+.secTitle {
+	background-color: #fafafa;
+}
+.secTitle td {
+	border-top: 1px solid #9ebcc3;
+	border-right: 1px solid #9ebcc3;
+	padding: 8px;
+	text-align: center;
+}
+.capsule td {
+	border-top: 1px solid #9ebcc3;
+	border-right: 1px solid #9ebcc3;
+	padding: 5px;
+	padding-left: 1em;
+}
+
+.mainPadding {
+	padding: 6px;
+}
+
+.subTitle {
+	text-align: right;
+	padding: 6px;
+	padding-right: 10px;
+	background-color: #9cf;
+	border-bottom: 1px solid #9ebcc3;
+}
+
+.tdTitle {
+	padding: 5px;
+	width: 140px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-right: 1px solid #9ebcc3;
+	border-left: 1px solid #9ebcc3;
+	border-bottom: 1px solid #9ebcc3;
+}
+.tdTitleB {
+	padding: 5px;
+	width: 100px;
+	padding-left: 10px;
+	padding-right: 15px;
+	border-right: 1px solid #9ebcc3;
+	border-left: 1px solid #9ebcc3;
+	border-bottom: 1px solid #9ebcc3;
+}
+
+.spanTitle {
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.tdBody {
+	padding: 5px;
+	width: 175px;
+	padding-left: 10px;
+	border-bottom: 1px solid #9ebcc3;
+}
+.tdBodyA {
+	padding: 5px;
+	width: 235px;
+	padding-left: 10px;
+	border-bottom: 1px solid #9ebcc3;
+}
+
+.tdExtend {
+	padding: 5px;
+	margin: -5px;
+	padding-left: 10px;
+	border-bottom: 1px solid #9ebcc3;
+}
+
+.tdAppender {
+	padding: 2px;
+	border-left: 1px solid #9ebcc3;
+	border-bottom: 1px solid #9ebcc3;
+}
+.tdAppenderI {
+	padding: 5px;
+	padding-left: 10px;
+	border-bottom: 1px solid #9ebcc3;
+}
+
+.tdSnipper {
+	border-left: 1px solid #9ebcc3;
+	border-bottom: 1px solid #9ebcc3;
+}
+
+.reasonTitle {
+	padding: 5px;
+	width: 220px;
+}
+
+.innerTable {
+	width: 100%;
+}
+
+.innTitle {
+	width: 24%;
+	padding: 5px;
+	text-align: center;
+	border-left: 1px solid #9ebcc3;
+	border-bottom: 1px solid #9ebcc3;
+}
+
+.innTitleF {
+	width: 24%;
+	padding: 5px;
+	text-align: center;
+	border-bottom: 1px solid #9ebcc3;
+}
+
+.innBody {
+	width: 24%;
+	padding: 5px;
+	text-align: center;
+	border-left: 1px solid #9ebcc3;
+	border-bottom: 1px solid #9ebcc3;
+}
+
+.innBodyF {
+	width: 24%;
+	padding: 5px;
+	text-align: center;
+	border-bottom: 1px solid #9ebcc3;
+}
+
+.innTBox {
+	width: 4%;
+	border-left: 1px solid #9ebcc3;
+	border-bottom: 1px solid #9ebcc3;
+}
+
+.innBox {
+	width: 4%;
+	border-left: 1px solid #9ebcc3;
+	border-bottom: 1px solid #9ebcc3;
+	padding: 2px;
+}
+
+.innBox span {
+	cursor: pointer;
+}
+
+.tdReason {
+	padding: 0;
+	margin: -5px;
+}
+
+.spanner {
+	padding: 2px;
+	padding-left: 5px;
+	color: gray;
+	cursor: pointer;
+}
+
+#infomenu, #viewinfomenu {
+	float:left;
+	font-family: Arial, "宋体";
+	width: 360px;
+}
+
+#infomenu ul, #viewinfomenu ul {
+	padding: 0 0 0 3px;
+	margin: 0;
+	list-style: none;
+}
+
+#infomenu ul li, #viewinfomenu ul li {
+	padding: 0;
+	margin-top: 2px;
+	padding-bottom: 1px;
+	margin-left: 2px;
+	float: left;
+	border: 1px solid #9ebcc3;
+	border-bottom: none;
+}
+
+#infomenu ul li a, #viewinfomenu ul li a {
+	display: block;
+	text-decoration: none;
+	padding: 6px 10px;
+}
+
+#infomenu ul li a:hover, #viewinfomenu ul li a:hover {
+	background-color: white;
+	color: #183152;
+}
+
+#infomenu ul li a span, #viewinfomenu ul li a span {
+	display: block;
+	cursor: pointer;
+}
+
+.tdAppender span {
+	padding-left: 8px;
+	padding-top: 5px;
+	float: left;
+}
+
+.tdAppender select {
+	margin-left: 60px;
+}
+
+#dealmenu, #viewdealmenu {
+	font-family: Arial, "宋体";
+	width: 720px;
+}
+
+#dealmenu ul, #viewdealmenu ul {
+	padding: 0 0 0 3px;
+	margin: 0;
+	list-style: none;
+}
+
+#dealmenu ul li, #viewdealmenu ul li {
+	padding: 0;
+	margin-top: 1px;
+	padding-bottom: 1px;
+	margin-left: 2px;
+	float: left;
+	border: 1px solid #9ebcc3;
+	border-bottom: none;
+}
+
+#dealmenu ul li a, #viewdealmenu ul li a {
+	display: block;
+	text-decoration: none;
+	padding: 6px 10px;
+}
+
+#dealmenu ul li a:hover, #viewdealmenu ul li a:hover {
+	background-color: white;
+	color: #183152;
+}
+
+#dealmenu ul li a span, #viewdealmenu ul li a span {
+	display: block;
+	cursor: pointer;
+}
+
+.titleHook {
+	padding-right: 9px;
+}
+
+.reasonadd:hover {
+	text-decoration: none;
+}
+
+.highlight {
+	font-weight: bold;
+}
+
+.currentTitle {
+	background-color: white;
+}
+
+.smartDisplay {
+	display: none;
+}
+
+.smartHidden {
+	display: block;
+}
+
+.midlight {
+	padding-left: 5px;
+}
+
+.tableInput {
+	border: none;
+}
+
+.flightdata {
+	float:right;
+	padding-right: 1em;
+	cursor: pointer;
+}
+
+.highlightflight {
+	text-decoration: underline;
+}
+
+.flows{
+	overflow:hidden;
+}
+
+.tomb {
+	font-weight: bold;
+}
+
+.firstLine {
+	padding: 5px;
+	width: 134px;
+	padding-left: 10px;
+	padding-right: 15px;
+}
+.firstBox {
+	padding: 5px;
+	width: 275px;
+	padding-left: 10px;
+	border-left: 1px solid #9ebcc3;
+}
+.secondLine {
+	padding: 5px;
+	width: 95px;
+	padding-left: 10px;
+	padding-right: 15px;
+	border-left: 1px solid #9ebcc3;
+}
+.secondBox {
+	padding: 5px;
+	width: 130px;
+	padding-left: 10px;
+	border-left: 1px solid #9ebcc3;
+}
+
+.requireBox {
+	font-size: 14px;
+	color: red;
+	padding-top: 9px;
+	padding-left: 1px;
+}
+
+.invisibleDisplay {
+	width: 100%;
+}
+.path {
+	width: 90%;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.pace {
+	width: 580px;
+}
+
+.redAlert {
+	border: 1px solid red;
+}
+
+.partDel {
+	border-bottom: 1px solid black;
+	cursor: pointer;
+	text-decoration: none;
+	color: black;
+}
+.partDelHover {
+	border-bottom: none;
+	cursor:pointer;
+	color: red;
+	text-decoration: none;
+}
+.partDel:hover {
+	border-bottom: none;
+	cursor:pointer;
+	color: red;
+	text-decoration: none;
+}
+
+.borderTopOnly {
+	border-top: 1px solid #9ebcc3;
+}
+.borderBottomOnly {
+	border-bottom: 1px solid #9ebcc3;
+}
+.markTable {
+	width: 98%;
+}
+.markTable .left {
+	width: 15%;
+	padding: 7px 7px 7px 0;
+	font-weight: bold;
+}
+.markTable .right {
+	width: 85%;
+	text-align: right;
+	padding-right: 20px;
+	padding: 7px 0 7px 7px;
+}
+.markTable .narrow {
+	width: 24%;
+	padding: 7px 7px 7px 0;
+	font-weight: bold;
+}
+.markTable .cap {
+	width: 43%;
+	padding: 7px 7px 7px 0;
+	font-weight: bold;
+	line-height: 120%;
+}
+.markTable .sub {
+	width: 55%;
+	text-align: right;
+	padding-right: 20px;
+	padding: 7px;
+}
+.markTable .wider {
+	width: 75%;
+	text-align: right;
+	padding-right: 20px;
+	padding: 7px;
+}
+.marking {
+	border-bottom: 1px solid black;
+	cursor: pointer;
+	color: black;
+	font-weight: bold;
+}
+.marking:hover {
+	border-bottom: none;
+	color: black;
+	text-decoration: none;
+}
+.headerClick {
+	cursor: pointer;
+	color: blue;
+	font-weight: bold;
+	border-bottom: 1px solid blue;
+}
+.headerClick:hover {
+	color: black;
+	text-decoration: none;
+	border-bottom: none;
+}
+.leftOnly {
+	margin-left: 0.2em;
+}
+.leftExpand {
+	margin-left: 2.4em;
+}
+.rightAlign {
+	float: right;
+	padding: 5px 0 5px 5px;
+}
+.seTitle {
+	width: 9%;
+	padding-left: 5px;
+}
+.seBody {
+	widht: 25%;
+	padding-left: 5px;
+}
+.seBody span {
+	padding: 5px 0;
+	margin: 0 5px;
+}
+.seZone {
+	width: 30%;
+}
+.settingP {
+	float: right;
+	margin-right: 1em;
+}
+.rightExpand {
+	margin-right: 5px;
+}
+.TitleBackground {
+	background-color: #e8f2fe;
+}
+.floatItem {
+	float: right;
+	padding-right:5px;
+}
+.floatItem a {
+	margin-right:10px;
+}
+.viewEvent {
+	float:left;
+	padding-top:7px;
+	padding-bottom:7px;
+}
+.viewEvent a {
+	cursor: pointer;
+	font-weight: bold;
+	border-bottom: 1px solid black;
+	text-decoration: none;
+}
+.viewEvent a:hover {
+	cursor: pointer;
+	font-weight: bold;
+	border-bottom: none;
+	text-decoration: none;
+}
+.nodrops {
+	text-decoration: none;
+}
+.viewEvent .viewer {
+	padding-left: 7em;
+}
+.smartLine {
+	line-height: 120%;
+}
+.fixedHook {
+	height: 100px;
+	overflow: auto;
+}
+
+.itemViewr {
+	margin-left: 1em;
+	padding-top: 3px;
+	border-bottom: 1px solid black;
+	cursor: pointer;
+	text-decoration: none;
+	font-weight: bold;
+}
+.itemViewr:hover {
+	margin-left: 1em;
+	padding-top: 3px;
+	border-bottom: 1px solid #f1f3f7;
+	cursor: pointer;
+	text-decoration: none;
+	font-weight: bold;
+}
+.viewHistory {
+	margin-right: 1em;
+	padding-top: 3px;
+	border-bottom: 1px solid black;
+	cursor: pointer;
+	text-decoration: none;
+	font-weight: bold;
+}
+.viewHistory:hover {
+	margin-right: 1em;
+	padding-top: 3px;
+	border-bottom: 1px solid white;
+	cursor: pointer;
+	text-decoration: none;
+	color: red;
+	font-weight: bold;
+}
+.cItem {
+	padding: 2px;
+	float: left;
+}
+
+
+/* password page css start */
+.pwdBox {
+	position: absolute;
+	top: 70px;
+	left: 33.3%;
+	border: 1px solid #9ebcc3;
+	width: 320px;
+	height: 280px;
+}
+.innerPwdBox {
+	margin: 3px;
+	margin-top: 6px;
+	width: 98%;
+	height: 100%;
+}
+.borderLinePix {
+	border-top: 1px dashed #9ebcc3;
+	width: 302px;
+	margin: 5px auto;
+}
+.hackPadding {
+	margin-top: 3em;
+}
+.hackMargin {
+	margin-bottom: 1em;
+}
+.titleBox {
+	margin: 1px auto;
+	margin-bottom: 0.5em;
+	margin-left: 0.5em;
+	padding-left: 2px;
+	color: #103271;
+	font-weight: bold;
+}
+.writerBox {
+	margin: 2px auto;
+	margin-bottom: 2.5em;
+}
+.textBox {
+	float:left;
+	padding: 5px;
+	padding-left: 1em; 
+	width: 30%;
+}
+.inputBox {
+	float:right;
+	width: 100%;
+}
+.operBox {
+	margin: 1px auto;
+	margin-bottom: 3px;
+}
+.hintBox {
+	float: left;
+	padding: 3px;
+	padding-left: 1em;
+	color: red;
+}
+.doBox {
+	float:right;
+	margin-right: 2em;
+	margin-bottom: 0.5em;
+}
+/* password page css end */
+
+
+.purgeTable {
+	width: 100%;
+}
+.purgeTable tr th {
+	padding: 5px;
+	background-color:#f1f7fe;
+	text-align: center;
+}
+.purgeTable tr td {
+	width: 25%;
+	border-top: 1px solid #9ebcc3;
+	padding: 5px;
+	text-align: center;
+}
+.borderLeftOnly {
+	border-left: 1px solid #9ebcc3;
+}
+
+.lessonTable tr td {
+	padding: 5px;
+	border-top: 1px solid #9ebcc3;
+	border-right: 1px solid #9ebcc3;
+	text-align: center;
+}
+.lTitleD, .lTitleP, .lTitleL, .lTitleT {
+	padding: 5px;
+	border-top: 1px solid #9ebcc3;
+	border-right: 1px solid #9ebcc3;
+	background-color: #f1f7fe;
+	text-align: center;
+}
+.lTitleD {
+	width: 22%;
+}
+.lTitleP {
+	width: 16%;
+}
+.lTitleL {
+	width: 34%;
+}
+.lTitleT {
+	width: 28%;
+}
+.maina:hover{
+	color:blue;
+	border-bottom: 1px solid blue;
+}

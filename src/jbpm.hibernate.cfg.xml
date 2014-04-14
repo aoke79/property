@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+  "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property><!-- MySQLDialect  -->
+    <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+    <property name="hibernate.connection.url">jdbc:oracle:thin:@10.0.20.31:1521/soc</property>
+    <property name="hibernate.connection.username">ltim_sa_ap</property>
+    <property name="hibernate.connection.password">isone2000</property><!--
+    
+    <property name="hibernate.connection.url">jdbc:oracle:thin:@10.16.0.232:1521/JAVASKY</property>
+    <property name="hibernate.connection.username">sms</property>
+    <property name="hibernate.connection.password">sms2011</property>
+    --><property name="hibernate.format_sql">false</property>
+    <property name="hibernate.show_sql">false</property>
+    
+    <property name="dbcp.maxActive">100</property>
+    <property name="dbcp.whenExhaustedAction">1</property>
+    <property name="dbcp.maxWait">120000</property>
+    <property name="dbcp.maxIdle">10</property>
+    <property name="dbcp.ps.maxActive">100</property>
+    <property name="dbcp.ps.whenExhaustedAction">1</property>
+    <property name="dbcp.ps.maxWait">120000</property>
+    <property name="dbcp.ps.maxIdle">10</property>
+	
+    <mapping resource="jbpm.repository.hbm.xml" />
+    <mapping resource="jbpm.execution.hbm.xml" />
+    <mapping resource="jbpm.history.hbm.xml" />
+    <mapping resource="jbpm.task.hbm.xml" />
+    <mapping resource="jbpm.identity.hbm.xml" />
+  </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="qualificationApplyM" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="6,40,48,48" name="寮�">
+      <transition g="-30,-38" name="机队申报" to="机队申报"/>
+   </start>
+   <task assignee="#{JiDui}" form="tf-qua-apply/tf-qua-apply!toJiDuiForm.do" g="124,37,88,52" name="机队申报">
+      <transition g="-79,-38" name="分公司级飞管标准专员审核报批" to="分公司级飞管标准专员审核报批"/>
+   </task>
+    <task assignee="#{FgsZhuanYuan}" form="tf-qua-apply/tf-qua-apply!toFgsZhuanYuanForm.do" g="367,41,190,52" name="分公司级飞管标准专员审核报批">
+      <transition g="-73,-19" name="分公司级飞管标准高级经理审核报批" to="分公司级飞管标准高级经理审核报批"/>
+   </task>
+    <task assignee="#{FgsJingLi}" form="tf-qua-apply/tf-qua-apply!toFgsJingLiForm.do" g="359,228,206,52" name="分公司级飞管标准高级经理审核报批">
+      <transition g="-65,-49" name="分公司级飞管领导审核报批" to="分公司级飞管领导审核报批"/>
+   </task>
+   <task assignee="#{FgsLingDao}" form="tf-qua-apply/tf-qua-apply!toFgsLingDaoForm.do" g="114,224,163,52" name="分公司级飞管领导审核报批">
+      <transition g="-20,-28" name="结束" to="缁撴潫"/>
+   </task>
+   <end g="11,228,48,45" name="缁撴潫"/>
+  
+</process>

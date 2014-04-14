@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-2.5.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+	
+	<!--自动化定时器总管理 -->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+    	<property name="triggers">
+    		<list>
+    			<ref local="hr_timerfor" />				<!--22:59-->
+    			<ref local="rz_timerfor" />	
+    		</list>
+   		</property>
+	</bean>
+	
+
+	<!-- HR人员信息同步 定时器 开始 -->
+	<bean id="hr" class="com.sms.data.hr.people.SyncPeolpe" />
+	<bean id="hr_timer"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+			<ref local="hr" />
+		</property>
+		<property name="targetMethod">
+			<value>auto</value>
+		</property>
+	</bean>
+	<bean id="hr_timerfor" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="hr_timer" />
+		</property>
+		<property name="cronExpression">
+<!--			<value>0 59 22 * * ? *</value>-->
+			<value>0 15 16 * * ?</value>
+		</property>
+	</bean>
+	<!-- HR人员信息同步  定时器 结束 -->
+	
+	<!-- 日志信息同步 定时器 开始 -->
+	<bean id="rz_timer"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+			<ref local="hr" />
+		</property>
+		<property name="targetMethod">
+			<value>rizhi</value>
+		</property>
+	</bean>
+	<bean id="rz_timerfor" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="rz_timer" />
+		</property>
+		<property name="cronExpression">
+			<value>0 10 22 * * ?</value>
+		</property>
+	</bean>
+	<!-- 日志信息同步  定时器 结束 -->
+	
+
+</beans>

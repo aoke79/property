@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="qualificationApplyIceTeacher" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="12,136,48,56" name="开始">
+      <transition g="-53,-41" name="分公司级飞管标准专员申报" to="分公司级飞管标准专员申报"/>
+   </start>
+   <task assignee="#{FgsZhuanYuan}" g="119,136,166,49" name="分公司级飞管标准专员申报">
+      <transition g="-72,-47" name="分公司级飞管领导审核报批" to="分公司级飞管领导审核报批"/>
+   </task>
+    <task assignee="#{FgsLingDao}" form="tf-qua-apply/tf-qua-apply-ice-teacher!toFgsLingDaoForm.do" g="337,137,190,52" name="分公司级飞管领导审核报批">
+      <transition g="-9,-38" name="结束" to="结束"/>
+   </task>
+   <end g="569,141,48,45" name="结束"/> 
+</process>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="subQualificationApplyChzg" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="8,76,48,48" name="start1">
+      <transition g="-37,-44" name="下达训练计划" to="下达训练计划"/>
+   </start>
+   <task g="92,73,92,52" name="下达训练计划">
+      <transition g="-22,-43" name="教员填单" to="教员填单"/>
+   </task>
+   <task g="219,74,92,52" name="教员填单" assignee="#{jiaoyuan}">
+      <transition g="-30,-46" name="检查员填单" to="检查员填单"/>
+   </task>
+   <task g="352,75,92,52" name="检查员填单" assignee="#{JianChaYuan}">
+      <transition g="-21,-48" name="本场训练" to="本场训练"/>
+   </task>
+   <task g="485,75,92,52" name="本场训练" assignee="#{FgsZy}">
+      <transition g="-225,-7" name="分公司级技术委员会办公室主任审核报批" to="分公司级技术委员会办公室主任审核报批"/>
+   </task>
+   <task g="410,177,240,52" name="分公司级技术委员会办公室主任审核报批" assignee="#{FgsZhuRen}">
+      <transition g="-202,-16" name="公司技术委员会办公室主任审核报批" to="公司技术委员会办公室主任审核报批"/>
+   </task>
+   <task g="423,290,217,52" name="公司技术委员会办公室主任审核报批" assignee="#{GsZhuRen}">
+      <transition g="-59,-37" name="公司飞管专员发文确认" to="公司飞管专员发文确认"/>
+   </task>
+   <task g="163,289,158,52" name="公司飞管专员发文确认" assignee="#{GsZhuanYuanOver}">
+      <transition g="-6,-35" name="结束" to="end"/>
+   </task>
+   <end g="60,293,48,48" name="end"/>
+</process>

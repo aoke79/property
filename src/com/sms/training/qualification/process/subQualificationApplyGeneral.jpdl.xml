@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="subQualificationApplyGeneral" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="40,198,48,48" name="start1">
+      <transition g="-37,-31" name="下达训练计划" to="下达训练计划"/>
+   </start>
+   <task g="174,196,92,49" name="下达训练计划">
+      <transition g="-32,-29" name="教员填单" to="教员填单"/>
+   </task>
+   <task assignee="#{jiaoyuan}" form="tf-qua-apply/tf-qua-apply-general!toJiaoYuanForm.do" g="335,193,77,52" name="教员填单">
+      <transition g="-27,-31" name="检查员填单" to="检查员填单"/>
+   </task>
+   <task assignee="#{JianChaYuan}" form="tf-qua-apply/tf-qua-apply-general!toJianChaYuanForm.do" g="472,196,83,50" name="检查员填单">
+      <transition g="-60,-10" name="资质更新" to="资质更新"/>
+   </task>
+   <task assignee="#{GsZhuanYuanOver}" form="tf-qua-apply/tf-qua-apply-general!toGsZhuanYuanOverForm.do" g="476,335,78,50" name="资质更新">
+      <transition g="-11,-33" name="结束" to="结束"/>
+   </task>
+   <end g="359,338,48,48" name="结束"/>
+</process>

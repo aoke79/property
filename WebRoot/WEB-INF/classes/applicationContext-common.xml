@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-2.5.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+	
+	<!-- <context:annotation-config /> -->
+	<context:component-scan base-package="com.sinoframe.dao,com.sinoframe.business,com.sinoframe.common,
+	com.sms.security.*.dao,com.sms.security.*.business,com.sms.training.qualification.business,com.sms.training.qualification.dao,com.sms.training.qualificationassess.business,com.sms.training.qualificationassess.dao,com.sms.training.qualificationassess.web.action.*,com.sms.data.hr.peopledept.business,com.sms.data.hr.peopledept.web.action.*" />
+	 <!-- Spring 工具类，通过 SpringContextUtil.getBean("beanName") 得到所需的 Bean -->
+ 
+	<bean id="SpringContextUtil" class="com.sinoframe.common.util.SpringContextUtil" />
+	
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="hibernateTemplate"
+		class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+		<!-- 使用缓存时 value="true"  不使用缓存时 value="false" -->
+		<property name="cacheQueries">
+			<value>true</value>
+		</property>
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="packagesToScan">
+			<list>
+				<value>com.sinoframe.bean</value>
+ 				<value>com.sms.security.basicdata.bean</value> <!-- 此处资质有引用 -->
+				<value>com.sms.security.basicworkflow.bean</value> 
+				<value>com.sms.training.qualification.bean</value>
+				<value>com.sms.training.qualificationassess.bean</value>
+				<value>com.sms.data.hr.peopledept.bean</value>
+			</list>
+		</property>
+      
+       <!-- 
+       
+       缓存的方式
+　　    none  不缓存
+
+　　    read-only 只读模式，在此模式下，如果对数据进行更新操作，会有异常；
+       
+　　    read-write读写模式在更新缓存的时候会把缓存里面的数据换成一个锁，其它事务如果去取相应的缓存数据，发现被锁了，直接就去数据库查询；
+        -->
+      
+      
+		<property name="entityCacheStrategies">
+			<props>
+				<prop key="com.sinoframe.bean.SysAddLog">
+					read-write
+				</prop>
+				<prop key="com.sinoframe.bean.SysBackLogMessage">
+					read-write
+				</prop>
+				<prop key="com.sinoframe.bean.SysCountry">
+					read-write
+				</prop>
+				<prop key="com.sinoframe.bean.SysErrorLog">
+					read-write
+				</prop>
+				<prop key="com.sinoframe.bean.SysHistoryMessage">
+					read-write
+				</prop>
+				<prop key="com.sinoframe.bean.SysLoginInfo">
+					read-write
+				</prop>
+				<prop key="com.sinoframe.bean.SysMenu">read-write</prop>
+				<prop key="com.sinoframe.bean.SysOperate">
+					read-write
+				</prop>
+				<prop key="com.sinoframe.bean.SysOperateGroup">
+					read-write
+				</prop>
+				<prop key="com.sinoframe.bean.SysVUserOperate">
+					read-write
+				</prop>
+				<prop
+					key="com.sinoframe.bean.SysOperateGroupRelation">
+					read-write
+				</prop>
+				<prop key="com.sinoframe.bean.SysOrganization">
+					read-write
+				</prop>
+				<prop key="com.sinoframe.bean.SysOrgCodeMapping">
+					read-write
+				</prop>
+				<prop key="com.sinoframe.bean.SysPermission">
+					read-write
+				</prop>
+				<prop key="com.sinoframe.bean.SysQueryLog">
+					read-write
+				</prop>
+				<prop key="com.sinoframe.bean.SysRelationAccountRole">
+					read-write
+				</prop>
+				<prop key="com.sinoframe.bean.SysRelationRoleOperate">
+					read-write
+				</prop>
+				
+				
+				
+				
+				
+				
+				
+				<prop key="com.sinoframe.bean.SysRole">read-write</prop>
+				<prop
+					key="com.sinoframe.bean.SysRoleOperategroupRelation">
+					read-write
+				</prop>
+				<prop key="com.sinoframe.bean.SysSystem">
+					read-write
+				</prop>
+				<prop key="com.sinoframe.bean.SysUpdateLog">
+					read-write
+				</prop>
+				<prop key="com.sinoframe.bean.SysUserCustomMenu">
+					read-write
+				</prop>
+				<prop key="com.sinoframe.bean.SysUserGroup">
+					read-write
+				</prop>
+				<prop key="com.sinoframe.bean.SysUserGroupRelation">
+					read-write
+				</prop>
+				<prop key="com.sinoframe.bean.CmUser">read-write</prop>
+				<prop key="com.sinoframe.bean.CmUserOperateRelation">
+					read-write
+				</prop>
+				<prop key="com.sinoframe.bean.CmUserPasswordHistory">
+					read-write
+				</prop>
+				<prop key="com.sinoframe.bean.CmUserPasswordHistory">
+					read-write
+				</prop>
+				<prop key="com.sinoframe.bean.SysVUserOperate">
+					read-write
+				</prop>
+			</props>
+		</property>
+       
+		<property name="collectionCacheStrategies">
+		
+			<props>
+			
+				<prop key="com.sinoframe.bean.SysCountry.tbUsers">
+					read-write
+				</prop>
+				<prop
+					key="com.sinoframe.bean.SysMenu.sysUserCustomMenus">
+					read-write
+				</prop>
+				<prop
+					key="com.sinoframe.bean.SysMenu.sysOperate">
+					read-write
+				</prop>
+				<prop
+					key="com.sinoframe.bean.SysOperate.sysOperateGroupRelations">
+					read-write
+				</prop>
+				<prop
+					key="com.sinoframe.bean.SysOperate.sysRelationRoleOperates">
+					read-write
+				</prop>
+				<prop
+					key="com.sinoframe.bean.SysOperate.sysPermissions">
+					read-write
+				</prop>
+				<prop
+					key="com.sinoframe.bean.SysOperate.cmUserOperateRelations">
+					read-write
+				</prop>
+				<prop
+					key="com.sinoframe.bean.SysOperateGroup.sysRoleOperategroupRelations">
+					read-write
+				</prop>
+				<prop
+					key="com.sinoframe.bean.SysOperateGroup.sysOperateGroupRelations">
+					read-write
+				</prop>
+				<prop
+					key="com.sinoframe.bean.SysOrganization.setChild_Adm">
+					read-write
+				</prop>
+				<prop
+					key="com.sinoframe.bean.SysOrganization.setChild_Fun">
+					read-write
+				</prop>
+				<prop
+					key="com.sinoframe.bean.SysOrganization.setChild_Supervise">
+					read-write
+				</prop>
+				<prop
+					key="com.sinoframe.bean.SysOrganization.setSysOrgCodeMapping">
+					read-write
+				</prop>
+				
+				<prop
+					key="com.sinoframe.bean.SysRole.sysRelationAccountRoles">
+					read-write
+				</prop>
+				
+				<prop
+					key="com.sinoframe.bean.SysRole.sysRelationRoleOperates">
+					read-write
+				</prop>
+				<prop
+					key="com.sinoframe.bean.SysRole.sysRoleOperategroupRelations">
+					read-write
+				</prop>
+				<prop key="com.sinoframe.bean.SysRole.sysUserGroups">
+					read-write
+				</prop>
+				<prop key="com.sinoframe.bean.SysUserGroup.setCmUser">
+					read-write
+				</prop>
+				<prop
+					key="com.sinoframe.bean.SysUserGroup.setSysRole">
+					read-write
+				</prop>
+				<prop
+					key="com.sinoframe.bean.CmUser.sysRelationAccountRoles">
+					read-write
+				</prop>
+				<prop
+					key="com.sinoframe.bean.CmUser.cmUserOperateRelations">
+					read-write
+				</prop>
+				<prop
+					key="com.sinoframe.bean.CmUser.sysUserCustomMenus">
+					read-write
+				</prop>
+				<prop
+					key="com.sinoframe.bean.CmUser.sysBackLogMessages">
+					read-write
+				</prop>
+				<prop
+					key="com.sinoframe.bean.CmUser.cmUserPasswordHistories">
+					read-write
+				</prop>
+				<prop key="com.sinoframe.bean.CmUser.sysLoginInfos">
+					read-write
+				</prop>
+				<!--<prop key="com.sinoframe.bean.CmUser.sysUserGroups">
+					read-write
+				</prop>
+				-->
+				<prop key="com.sinoframe.bean.CmUser.sysUserGroupRelations">
+					read-write
+				</prop>
+				
+				
+				
+				
+			</props>
+			
+		</property>
+          
+
+		<property name="hibernateProperties">
+			<props>
+				<!-- prop key="hibernate.dialect">org.hibernate.dialect.Oracle9Dialect</prop-->
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.OracleDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.jdbc.batch_size">25</prop>
+				<prop key="hibernate.query.factory_class">
+					org.hibernate.hql.ast.ASTQueryTranslatorFactory
+				</prop>
+				<prop key="hibernate.dbcp.maxActive">100</prop>
+				<prop key="hibernate.dbcp.whenExhaustedAction">1</prop>
+				<prop key="hibernate.dbcp.maxWait">120000</prop>
+				<prop key="hibernate.dbcp.maxIdle">10</prop>
+				<prop key="hibernate.dbcp.ps.maxActive">100</prop>
+				<prop key="hibernate.dbcp.ps.whenExhaustedAction">
+					1
+				</prop>
+				<prop key="hibernate.dbcp.ps.maxWait">120000</prop>
+				<prop key="hibernate.dbcp.ps.maxIdle">10</prop>
+				<prop key="hibernate.use_outer_join">true</prop>
+				<prop key="hibernate.jdbc.fetch_size">50</prop>
+				<prop key="hibernate.jdbc.batch_size">25</prop>
+				<!-- add by niujingwei start -->
+				<prop key="hibernate.cache.use_second_level_cache">
+					true
+				</prop>
+				<prop key="hibernate.max_fetch_depth">3</prop>
+				<prop key="hibernate.cache.use_query_cache">true</prop>
+				<prop key="hibernate.cache.provider_class">
+					org.hibernate.cache.EhCacheProvider
+				</prop>
+				<!-- add by niujingwei end -->
+				<prop key="hibernate.connection.SetBigStringTryClob">true</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="oracle.jdbc.driver.OracleDriver" />
+		<property name="url"
+			value="jdbc:oracle:thin:@10.0.20.31:1521/soc" />
+		<property name="username" value="ltim_sa_ap" />
+		<property name="password" value="isone2000" />
+	</bean>
+	
+
+	<bean id="hPagination3" class="com.sinoframe.common.paging.HPagination3">
+	    <!-- 使用缓存时 value="true"  不使用缓存时 value="false" -->
+        <property name="cache" value="true"/>	
+	</bean>
+	
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	
+	
+	<!-- 数据接口 开始 -->
+	
+	<bean id="jdbcdataSourceFMS" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.microsoft.jdbc.sqlserver.SQLServerDriver"/>
+		<property name="url" value="jdbc:microsoft:sqlserver://10.9.195.8:1066;DatabaseName=crewpub"/>
+		<property name="username" value="fss"/>
+		<property name="password" value="fss"/>
+	</bean>
+	
+	<bean id="jdbcDataSourceHR" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.microsoft.jdbc.sqlserver.SQLServerDriver"/>
+		<property name="url" value="jdbc:microsoft:sqlserver://10.10.101.73:1433;"/>
+		<property name="username" value="fss"/>
+		<property name="password" value="fss"/>
+	</bean>
+	
+	<bean id="dataSourceHR" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="oracle.jdbc.OracleDriver"/>
+		<property name="url" value="jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=10.0.7.43)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=ahic)))"/>
+		<property name="username" value="ahicehr"/>
+		<property name="password" value="ahicehr20130702"/>          
+	</bean>
+	
+	<bean id="dataSourceOA" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.microsoft.jdbc.sqlserver.SQLServerDriver"/>
+		<property name="url" value="jdbc:microsoft:sqlserver://10.0.7.29:1433;DatabaseName=ecology"/>
+		<property name="username" value="oaviewinfo"/>
+		<property name="password" value="oaviewinfo"/>
+	</bean>
+	
+	<bean id="dataSourceAHDB" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="oracle.jdbc.OracleDriver"/>
+		<property name="url" value="jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=10.0.5.36)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=ahdb)))"/>
+		<property name="username" value="ahicquery"/>
+		<property name="password" value="ahicquery321"/>          
+	</bean>
+	<bean id="dataSourceRZ" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="oracle.jdbc.OracleDriver"/>
+		<property name="url" value="jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=10.0.7.50)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=LMS)))"/>
+		<property name="username" value="sso"/>
+		<property name="password" value="123456"/>          
+	</bean>
+	<bean id="dataSourceFK" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="oracle.jdbc.OracleDriver"/>
+		<property name="url" value="jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=10.0.5.47)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=hec)))"/>
+		<property name="username" value="PORTAL"/>
+		<property name="password" value="PORTAL2WSX"/>          
+	</bean>
+	<bean id="dataSourceTJ" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="oracle.jdbc.OracleDriver"/>
+		<property name="url" value="jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=10.0.5.43)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=ahdb)))"/>
+		<property name="username" value="biportal"/>
+		<property name="password" value="biportal"/>          
+	</bean>
+	
+	<bean id="jdbcdataSourcefss2" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="oracle.jdbc.OracleDriver"/>
+		<property name="url" value="jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=10.9.194.118)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=SMSDB)))"/>
+		<property name="username" value="fss"/>
+		<property name="password" value="cafss10"/>          
+	</bean>
+	
+	<!-- 数据接口 结束 --> 
+	
+	
+	<!-- 配置文件路径 -->
+	<bean id="fileConfigSystem" class="com.sinoframe.common.FileConfigSystem"
+		init-method="init">
+		<property name="rootPath" value="D:\sinosoftsms"></property>
+		<property name="fileMap">
+			<map>
+				<entry key="templateKey" value="template"></entry>
+				<entry key="intf_soc" value="intf_soc"></entry>
+				<entry key="RewritExcel" value="RewritExcel"></entry>
+				<entry key="excel" value="excel"></entry>
+				<entry key="qarexcel" value="qarexcel"></entry>
+				<entry key="cfp" value="cfp"></entry>
+				<entry key="photoZip" value="photoZip"></entry>
+				<entry key="security" value="security"></entry>
+				<entry key="qualification" value="qualification"></entry>
+			</map>
+		</property>
+	</bean>
+	
+	<!-- 配置定时器 开始-->
+	<!--import resource="config_timer.xml"/-->
+	<!--  配置定时器 结束 -->
+	
+</beans>

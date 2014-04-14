@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="qualificationApplyGeneralNDHXJC" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="25,92,48,34" name="开始">
+      <transition name="实施检查" to="实施检查" g="-25,-24"/>
+   </start>
+   <task name="实施检查" g="138,90,92,52">
+      <transition g="-24,-24" name="资质更新" to="资质更新"/>
+   </task>
+   <task assignee="#{JiDui}" g="308,90,92,52" name="资质更新">
+      <transition g="-14,-27" name="结束" to="结束"/>
+   </task>
+   <end g="458,93,48,48" name="结束"/>
+</process>

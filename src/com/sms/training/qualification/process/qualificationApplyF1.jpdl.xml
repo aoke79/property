@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="qualificationApplyF1" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="12,136,48,56" name="开始">
+      <transition g="-25,-40" name="机队申报" to="机队申报"/>
+   </start>
+   <task assignee="#{JiDui}" form="tf-qua-apply/tf-qua-apply!toJiDuiForm.do" g="119,136,88,49" name="机队申报">
+      <transition g="-72,-47" name="分公司级飞管标准专员审核报批" to="分公司级飞管标准专员审核报批"/>
+   </task>
+    <task assignee="#{FgsZhuanYuan}" form="tf-qua-apply/tf-qua-apply-f1!toFgsZhuanYuanForm.do" g="287,136,190,52" name="分公司级飞管标准专员审核报批">
+      <transition g="-9,-38" name="结束" to="结束"/>
+   </task>
+   <end g="519,140,48,45" name="结束"/>
+</process>

@@ -1,0 +1,35 @@
+<ehcache>
+
+
+	<diskStore path="java.io.tmpdir" />
+
+
+
+	<defaultCache maxElementsInMemory="10000" eternal="false"
+		overflowToDisk="true" timeToIdleSeconds="120" timeToLiveSeconds="120"
+		diskPersistent="false" diskExpiryThreadIntervalSeconds="120" />
+   
+	<cache name="org.hibernate.cache.UpdateTimestampsCache"
+		maxElementsInMemory="5000" eternal="false" overflowToDisk="true" />
+
+	<cache name="org.hibernate.cache.StandardQueryCache"
+		maxElementsInMemory="10000" eternal="false" timeToLiveSeconds="120"
+		overflowToDisk="true" />
+    <!-- 
+	<cache name="com.sinoframe.bean.SysRole" maxElementsInMemory="100"
+		eternal="false" overflowToDisk="true" timeToIdleSeconds="300"
+		timeToLiveSeconds="600" diskPersistent="false" />
+	<cache name="com.sinoframe.bean.CmUser" maxElementsInMemory="100"
+		eternal="false" overflowToDisk="true" timeToIdleSeconds="300"
+		timeToLiveSeconds="600" diskPersistent="false" />
+	<cache name="com.sinoframe.bean.SysOperate"
+		maxElementsInMemory="100" eternal="false" overflowToDisk="true"
+		timeToIdleSeconds="300" timeToLiveSeconds="600"
+		diskPersistent="false" />
+	<cache name="com.sinoframe.bean.SysRelationAccountRole"
+		maxElementsInMemory="100" eternal="false" overflowToDisk="true"
+		timeToIdleSeconds="300" timeToLiveSeconds="600"
+		diskPersistent="false" />
+		 -->
+</ehcache>
+

@@ -1,0 +1,33 @@
+﻿.tiandan111{width:"100%";background-color:#f1f6f7;}
+
+.renyuanxinxi{background-color: #47B2F8;border:2px #CDC7C4 solid;font:12px "宋体";color:#484848;margin:2px; border-collapse:collapse;} 
+.renyuanxinxi #caption1{background-color: #47B2F8;line-height:20px;}
+.renyuanxinxi #caption2{width:93%; float:center; text-align:center;background-color: #47B2F8;font:16px "宋体";color:#FFFFFF; font-weight:bold;line-height:20px;margin-top:2px;}
+.renyuanxinxi #updown{width:5%; float:right;margin-top:3px; margin-right:3px;} 
+.renyuanxinxi td{background-color: #A9D8F6;border:1px #FFFFFF solid;}
+.renyuanxinxi tr.even td{background-color: #E0F2FC;}
+.renyuanxinxi span{width:85px; float:left;text-align:right;line-height:15px; margin-left:5px; margin-top:2px;}
+.renyuanxinxi p{float:left; text-align:left;line-height:15px; margin-top:2px;}
+.renyuanxinxi #lie1{width:55px; float:left;text-align:right;line-height:15px;margin-top:2px;}
+.renyuanxinxi #zhaopian{margin-top:2px;}
+
+.zxtxjl{background-image:url(images/index-td/txjl-bg_033.jpg);background-repeat:repeat-y;width: 100%;height: 75%;}
+
+.zxtxjl .xljl-cd{ width:"100%"; height:"20%"; margin-top:10px; }
+.zxtxjl .tijiao{width:"10%"; height:"10%"; display:block; float:right; margin-top:-5px; }
+.zxtxjl .main00{ position:absolute; left:0;height:52%;width:100%; OVERFLOW-y: auto ; margin-top:40px; }
+
+.zxtxjl .bk{ float:left; width:240px; height:90px; background-color:#9bd8fe;margin:8px 0px 8px 8px; }   
+.zxtxjl .box{ width:220px; height:70px; margin:10px auto; background-color:#FFF;}
+.zxtxjl .box1{ float:left; display:inline; overflow:hidden; zoom:1; width:130px; height:70px;}
+.zxtxjl .box1 span{ float:left; width:15px; height:23px; margin-top:15px; margin-left:5px; margin-right:10px;}
+.zxtxjl .box1 p{ float:left; width:100px; height:50px; font:"宋体"; font-size:12px; line-height:22px; margin-top:8px;}
+.zxtxjl .lin{ float:left; display:inline; overflow:hidden; zoom:1; width:3px; height:70px;}
+.zxtxjl .an1{ float:left; width:60px; margin-top:8px; margin-left:20px;}
+
+.MyTitle {width: 13.3%;border-top: 1px solid #9ebcc3;border-right: 1px solid #9ebcc3;padding: 5px;padding-left:10px;background-color: #e8f2fe; }
+.shenpijilu{padding: 8px;border-bottom: 1px solid #9ebcc3;border-top: none;}
+.shenpijilu2{padding: 2px;padding-left:7px;border-bottom: 1px solid #9ebcc3;border-top: none;}
+
+
+ 

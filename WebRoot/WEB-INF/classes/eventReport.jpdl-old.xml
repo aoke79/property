@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="eventReport" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="19,226,48,48" name="start1">
+      <transition g="-26,-22" name="判断角色" to="exclusive1"/>
+   </start>
+   <decision g="123,225,48,48" name="exclusive1">
+   	  <handler class="com.sinoframe.common.jbpm4.RoleEvaluationHandler" />
+      <transition g="-15,-22" name="基层" to="基层信息员添加"/>
+      <transition g="275,343:-4,-18" name="一级单位" to="一级单位信息员添加"/>
+      <transition g="228,404:-47,-9" name="航安部" to="航安部信息员添加"/>
+   </decision>
+   <task g="208,222,130,52" form="jbpm4-evnet-report!toReportPage.do" name="基层信息员添加" candidate-users="jiceng,jicenglingdao">
+      <transition g="-13,-17" name="提交" to="exclusive2"/>
+   </task>
+   <task g="581,315,148,52" form="jbpm4-evnet-report!toYijiReportPage.do" name="一级单位信息员添加" assignee="yiji">
+      <transition g="-60,7" name="上报" to="航安部信息员处理"/>
+   </task>
+   <task g="751,378,148,52" form="jbpm4-evnet-report!toHanganReportPage.do" name="航安部信息员添加" assignee="hangan">
+      <transition g="-1,12" name="提交" to="航安部高级经理审核"/>
+   </task>
+   <task g="360,134,111,52" form="jbpm4-evnet-report!toAuditPage.do" name="基层领导审核" assignee="jicenglingdao">
+      <transition g="-23,-15" name="驳回" to="基层信息员添加"/>
+      <transition g="-3,-18" name="上报" to="exclusive3"/>
+   </task>
+   <decision g="390,225,48,48" name="exclusive2">
+   	  <handler class="com.sinoframe.common.jbpm4.GradeEvaluationHandler" />
+      <transition g="-18,-20" name="是领导" to="exclusive3"/>
+      <transition g="-23,-6" name="是信息员" to="基层领导审核"/>
+   </decision>
+   <decision g="480,227,48,48" name="exclusive3">
+      <transition g="-13,-21" name="不是" to="一级单位事件报告处理">
+      	<condition expr="#{eventReportType=='yijiReport'}" />
+      </transition>
+      <transition g="592,165:-46,9" name="机务" to="航安部信息员处理">
+      	<condition expr="#{eventReportType=='hanganReport'}" />
+      </transition>
+   </decision>
+   <task g="559,224,144,52" form="jbpm4-evnet-report!toYijiAuditPage.do" name="一级单位事件报告处理" assignee="yiji">
+      <transition g="-11,16" name="上报" to="航安部信息员处理"/>
+      <transition g="4,-21" name="关闭" to="end1"/>
+      <transition g="444,296:-13,4" name="驳回" to="基层信息员添加"/>
+   </task>
+   <task g="748,225,125,52" form="jbpm4-evnet-report!toHanganAuditPage.do" name="航安部信息员处理" assignee="hangan">
+      <transition g="-11,-17" name="驳回" to="一级单位事件报告处理"/>
+      <transition g="-13,-20" name="关闭" to="end1"/>
+      <transition g="-12,16" name="上报" to="航安部高级经理审核"/>
+   </task>
+   <end g="961,66,48,48" name="end1"/>
+   <task g="910,224,139,52" form="jbpm4-evnet-report!toHanganjingliAuditPage.do" name="航安部高级经理审核" assignee="hanganjingli">
+      <transition g="-22,-17" name="关闭" to="end1"/>
+      <transition g="-11,-18" name="驳回上报" to="航安部信息员处理"/>
+      <transition g="6,-1" name="启动调查" to="调查"/>
+      <transition g="-27,-12" name="驳回提交" to="航安部信息员添加"/>
+   </task>
+   <state g="1012,145,92,47" name="调查">
+      <transition g="2,-11" name="结束" to="end1"/>
+   </state>
+</process>

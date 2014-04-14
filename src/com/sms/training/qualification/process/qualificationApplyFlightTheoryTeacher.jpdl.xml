@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="qualificationApplyFlightTheoryTeacher" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="69,87,48,48" name="开始">
+      <transition g="-46,-40" name="人力资源招聘教员" to="人力资源招聘教员"/>
+   </start>
+   <task g="188,84,135,52" name="人力资源招聘教员">
+      <transition name="结束" to="结束" g="-14,-37"/>
+   </task>
+   <end g="410,87,48,48" name="结束"/>
+</process>

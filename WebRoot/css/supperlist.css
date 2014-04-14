@@ -1,0 +1,15 @@
+/*@charset "utf-8";*/
+/**/
+html,img,p,ul,a{ border:0; padding:0px; margin:0px; text-decoration:none;}
+#qualPilotSuperList .box{display:inline;}    
+#qualPilotSuperList .pic{height:35px;width:130px;}
+#qualPilotSuperList .box table{border-collapse:collapse;margin-top:10px; margin-left:20px;}
+#qualPilotSuperList .box td{border:1px #66B3FF solid;}
+#qualPilotSuperList #sed td{border-bottom:2px #0072E3 solid;}
+#qualPilotSuperList .box a span{color:#e60012; font-weight:normal;}
+#qualPilotSuperList .fl-xgy a{ float:left; width:80px; height:30px; line-height:30px; font-size:12px; font-weight:bold; color:#157fd0; text-align:center;}
+#qualPilotSuperList .fl-sj  a{ float:left; width:80px; height:15px; line-height:15px; font-size:12px; font-weight:bold; color:#157fd0; text-align:center;}
+#qualPilotSuperList .fl-zjx a{ float:left; width:110px; height:30px; line-height:30px; font-size:12px; font-weight:bold; color:#157fd0; text-align:center;}
+#qualPilotSuperList .fl-ybzg a{ float:left; width:125px; height:15px; line-height:15px; font-size:12px; font-weight:bold; color:#157fd0; text-align:center;}
+#qualPilotSuperList .fl-tszg a{ float:left; width:130px; height:15px; line-height:15px; font-size:12px; font-weight:bold; color:#157fd0; text-align:center;}
+#qualPilotSuperList .fl-qt  a{ float:left; width:120px; height:30px; line-height:30px; font-size:12px; font-weight:bold; color:#157fd0; text-align:center;}

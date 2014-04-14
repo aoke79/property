@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="subQualificationApplyJ" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="47,168,48,48" name="start1">
+      <transition g="-34,-47" name="检查员填单" to="检查员填单"/>
+   </start>
+   <end g="258,323,48,48" name="结束"/>
+   <task assignee="#{JianChaYuan}" form="tf-qua-apply/tf-qua-apply-j!toJianChaYuanForm.do" g="177,165,85,52" name="检查员填单">
+      <transition g="-102,-47" name="分公司级技术委员会办公室主任审核报批" to="分公司级技术委员会办公室主任审核报批"/>
+   </task>
+   <task assignee="#{FgsZhuRen}" form="tf-qua-apply/tf-qua-apply-j!toFgsZhuRenForm.do" g="377,167,257,52" name="分公司级技术委员会办公室主任审核报批">
+      <transition g="-125,-14" name="公司飞管专员发文确认" to="分公司飞管专员发文确认"/>
+   </task>
+   <task assignee="#{GsZhuanYuanOver}" form="tf-qua-apply/tf-qua-apply-j!toGsZhuanYuanOverForm.do" g="421,318,177,52" name="分公司飞管专员发文确认">
+      <transition g="-14,-33" name="结束" to="结束"/>
+   </task>
+</process>

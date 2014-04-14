@@ -1,0 +1,114 @@
+a,sapn,p,h1,ul,li,ol,form,body,input,select{margin:0;padding:0;}
+a{text-decoration:none;}
+li{list-style:none;}
+body{text-align:center;background-color: #f4f8dd; }
+#page{
+	position:relative;
+	width:1003px;
+	height:600px;
+	margin:0 auto;
+	background:url(../images/anhua/culture_left.jpg) no-repeat left;
+	background-color: #f4f8dd;
+	}
+#denglu_kaung{
+	float:right;
+	width:380px;
+	height:400px;
+	background:url(../images/anhua/denglukuang2.png) no-repeat left;
+	*margin:283px 0 0 50px;
+	margin:0px;
+	display:inline;
+	}
+#yonghu{
+	border: 1px solid #dbe6e2; 
+	border-top-color: #b1a9a7!important;
+	width: 286px; 
+	height: 36px;
+	padding: 1px;
+	float:left;
+	margin:120px 0 0 40px;
+	display:inline;
+	}
+.culture_inter{ 
+	width: 284px; 
+	height:34px; 
+	border: 1px solid #8ba95f; 
+	display: block; 
+	background: url(../images/anhua/culture_admin.gif) no-repeat 12px 10px; 
+	float: left;
+	}
+.culture_two{ 
+	width: 284px; 
+	height:34px; 
+	border: 1px solid #c1c9cb; 
+	display: block; 
+	background: url(../images/anhua/culture_password.gif) no-repeat 12px 10px; 
+	float: left;}
+.culture_input{ 
+	width: 247px; 
+	float: right; 
+	height: 32px; 
+	border: 0; 
+	line-height: 32px; 
+	padding-right: 5px; 
+	outline: none;
+	}
+.culture_in{
+	width: 247px; 
+	float: right; 
+	height: 32px; 
+	border: 0; 
+	line-height: 32px; 
+	padding-right: 5px; 
+	outline: none;}
+
+#mima{
+	border: 1px solid #c3ccd1; 
+	border-top-color: #59747b!important; 
+	width: 286px; 
+	height: 36px;
+	padding: 1px;
+	float:left;
+	margin:15px 0 0 40px;
+	display:inline;
+	}
+.mima_tubiao{
+	float:left;
+	margin:6px 0 0 3px;
+	}
+#yanzhengma{
+	width: 286px; 
+	height: 20px;
+	padding: 10px;
+	float:left;
+	margin:15px 0 0 10px;
+	display:inline;
+	}
+
+#validateCode{
+	width: 60px; 
+	float: lft; 
+	height: 20px; 
+	line-height: 20px; 
+	padding-right: 5px; 
+	outline: none;
+	}
+
+#login{
+	height:36px;
+	margin:0 px;
+	}
+.denglu{
+	float:left;
+	width:180px;
+	margin-left:90px;
+	}
+.p_tishi{
+	float:left;
+	width:250px;
+	height:24px;
+	color:#6666666;
+	font:12px  "����";
+	margin:8px 0 0 64px;
+	display:inline;
+	}

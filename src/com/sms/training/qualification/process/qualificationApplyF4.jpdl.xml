@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="qualificationApplyF4" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="48,40,48,48" name="开始">
+      <transition g="-23,-29" name="机队申报" to="机队申报"/>
+   </start>
+   <task assignee="#{JiDui}" form="tf-qua-apply/tf-qua-apply!toJiDuiForm.do" g="136,37,88,52" name="机队申报">
+      <transition g="-55,-38" name="分公司级飞管标准专员审核报批" to="分公司级飞管标准专员审核报批"/>
+   </task>
+    <task assignee="#{FgsZhuanYuan}" form="tf-qua-apply/tf-qua-apply!toFgsZhuanYuanForm.do" g="309,35,190,52" name="分公司级飞管标准专员审核报批">
+      <transition g="-56,-38" name="分公司级飞管标准高级经理审核报批" to="分公司级飞管标准高级经理审核报批"/>
+   </task>
+    <task assignee="#{FgsJingLi}" form="tf-qua-apply/tf-qua-apply!toFgsJingLiForm.do" g="600,37,206,52" name="分公司级飞管标准高级经理审核报批">
+      <transition g="-162,-15" name="分公司级飞管领导审核报批" to="分公司级飞管领导审核报批"/>
+   </task>
+   <task assignee="#{FgsLingDao}" form="tf-qua-apply/tf-qua-apply!toFgsLingDaoForm.do" g="624,186,163,52" name="分公司级飞管领导审核报批">
+      <transition g="-72,-34" name="公司飞管专员审核报批" to="公司飞管专员审核报批"/>
+   </task>
+    <task assignee="#{GsZhuanYuan}" form="tf-qua-apply/tf-qua-apply!toGsZhuanYuanForm.do" g="366,184,168,52" name="公司飞管专员审核报批">
+      <transition g="-77,-36" name="公司飞管标准高级经理审核报批" to="公司飞管标准高级经理审核报批"/>
+   </task>
+     <task assignee="#{GsJingLi}" form="tf-qua-apply/tf-qua-apply!toGsJingLiForm.do" g="48,183,187,52" name="公司飞管标准高级经理审核报批">
+      <transition g="12,-6" name="公司飞管领导审核报批" to="公司飞管领导审核报批"/>
+   </task>
+    <task assignee="#{GsLingDao}" form="tf-qua-apply/tf-qua-apply!toGsLingDaoForm.do" g="61,329,166,52" name="公司飞管领导审核报批">
+      <transition g="-51,-33" name="公司飞管专员申报" to="公司飞管专员申报"/>
+   </task>
+    <task assignee="#{GsZhuanYuanSb}" form="tf-qua-apply/tf-qua-apply!toGsZhuanYuanSbForm.do" g="308,328,141,52" name="公司飞管专员申报">
+      <transition name="结束" to="结束" g="-14,-25"/>
+   </task>
+   <end g="530,331,48,45" name="结束"/>
+  
+</process>

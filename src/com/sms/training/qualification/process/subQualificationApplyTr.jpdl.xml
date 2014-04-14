@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="subQualificationApplyTr" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="3,59,48,43" name="start1">
+      <transition assignee="#{XlZhuanYuan}" form="tf-qua-apply/tf-qua-apply!toXlZhuanYuanForm.do" g="-38,-35" name="下达训练计划" to="下达训练计划"/>
+   </start>
+   <end g="271,416,48,48" name="结束"/>
+   <task assignee="#{jiaoyuan}" form="tf-qua-apply/tf-qua-apply!toJiaoYuanForm.do" g="225,57,75,52" name="教员填单">
+      <transition g="-30,-32" name="检查员填单" to="检查员填单"/>
+   </task>
+   <task assignee="#{JianChaYuan}" form="tf-qua-apply/tf-qua-apply!toJianChaYuanForm.do" g="340,58,77,52" name="检查员填单">
+      <transition g="-30,-34" name="本场训练" to="本场训练"/>
+   </task>
+   <task assignee="#{FgsZhuRen}" form="tf-qua-apply/tf-qua-apply!toFgsZhuRenForm.do" g="397,145,248,52" name="分公司级技术委员会办公室主任审核报批">
+      <transition g="-31,-18" name="下发" to="exclusive1"/>
+   </task>
+   <task assignee="#{GsZhuRen}" form="tf-qua-apply/tf-qua-apply!toGsZhuRenForm.do" g="404,325,242,52" name="公司技术委员会办公室主任审核报批">
+      <transition g="-130,-9" name="公司飞管专员发文确认" to="公司飞管专员发文确认"/>
+   </task>
+   <task assignee="#{GsZhuanYuanOver}" form="tf-qua-apply/tf-qua-apply!toGsZhuanYuanOverForm.do" g="438,411,177,52" name="公司飞管专员发文确认">
+      <transition g="-17,-22" name="结束" to="结束"/>
+   </task>
+   <task assignee="#{FgsZy}" form="tf-qua-apply/tf-qua-apply!toFgsZyForm.do" g="474,57,92,51" name="本场训练">
+      <transition g="-224,-10" name="分公司级技术委员会办公室主任审核报批" to="分公司级技术委员会办公室主任审核报批"/>
+   </task>
+   <task g="91,57,92,52" name="下达训练计划">
+      <transition g="-23,-33" name="教员填单" to="教员填单"/>
+   </task>
+   <decision g="498,242,48,48" name="exclusive1">
+    <handler class="com.sinoframe.common.jbpm4.SubQuaApplyTrHandler" />
+      <transition g="-74,-40" name="分公司标准专员发文确认" to="分公司标准专员发文确认"/>
+      <transition g="-201,-4" name="公司技术委员会办公室主任审核报批" to="公司技术委员会办公室主任审核报批"/>
+   </decision>
+   <task assignee="#{fgsZhuanYuanOver}" g="179,241,229,52" name="分公司标准专员发文确认">
+      <transition g="-37,-8" name="结束" to="结束"/>
+   </task>
+</process>

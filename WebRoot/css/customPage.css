@@ -1,0 +1,25 @@
+.pageTable {
+	width:90%;
+}
+
+.pageTable tr td {
+	padding: 5px;
+}
+
+.colTitle {
+	width: 16%;
+}
+
+.colBody {
+	width: 34%;
+}
+
+.floatleft {
+	float:left;
+}
+
+.levarea {
+	width: 84%;
+	overflow-x: hidden;
+	overflow-y: auto;
+}

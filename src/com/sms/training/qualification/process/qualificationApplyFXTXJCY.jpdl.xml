@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="qualificationApplyFXTXJCY" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="31,65,48,48" name="开始">
+      <transition g="-47,-50" name="分公司专员申报" to="分公司专员申报"/>
+   </start>
+   <task assignee="#{Fgszy}" form="" g="145,61,122,52" name="分公司专员申报">
+      <transition g="-66,-51" name="分公司高级经历审核批报" to="分公司高级经历审核批报"/>
+   </task>
+   <task assignee="#{Fgsjl}" form="tf-qua-apply/tf-qua-apply-fxtxjcy!toFgsJingLiForm.do" g="365,61,162,52" name="分公司高级经历审核批报">
+      <transition g="-58,-53" name="分公司领导审核批报" to="分公司领导审核批报"/>
+   </task>
+   <task assignee="#{Fgsld}" form="tf-qua-apply/tf-qua-apply-fxtxjcy!toFgsLingDaoForm.do" g="605,61,134,52" name="分公司领导审核批报">
+      <transition g="-29,-50" name="公司专员上报" to="公司专员上报"/>
+   </task>
+   <task assignee="#{Gszy}" form="tf-qua-apply/tf-qua-apply-fxtxjcy!toGsZhuanYuanForm.do" g="799,59,99,52" name="公司专员上报">
+      <transition g="-119,-17" name="公司高级经理审核" to="公司高级经理审核"/>
+   </task>
+   <task assignee="#{Gsjl}" form="tf-qua-apply/tf-qua-apply-fxtxjcy!toGsJingLiForm.do" g="784,218,134,52" name="公司高级经理审核">
+      <transition g="-39,-32" name="公司领导审核" to="公司领导审核"/>
+   </task>
+   <task assignee="#{Gsld}" form="tf-qua-apply/tf-qua-apply-fxtxjcy!toGsLingDaoForm.do" g="550,219,110,52" name="公司领导审核">
+      <transition g="-52,-36" name="公司专员申报" to="公司专员申报"/>
+   </task>
+   <task assignee="#{Gszysb}" form="tf-qua-apply/tf-qua-apply-fxtxjcy!toGsZhuanYuanSbForm.do" g="312,219,103,52" name="公司专员申报">
+      <transition g="-12,-30" name="结束" to="结束"/>
+   </task>
+   <end g="162,224,48,48" name="结束"/>
+</process>

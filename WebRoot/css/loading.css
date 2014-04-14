@@ -1,0 +1,26 @@
+.ol_loading {
+	width: 100%;
+	height:31px;
+	line-height:31px;
+/* 	background: url("../theme/standard/default/images/grid/loading.gif"); */
+	background-repeat: no-repeat;
+	font-weight:bold; 
+	color:blue;
+	background-position: center center;
+	display:none;
+	position:absolute;
+	top:175px ;
+	right:30px ;
+	
+}
+.ol_loading_mask{
+	height:240px;
+	width:100%;
+	position:absolute;
+	top:0px ;
+	left:0px ;
+	background-color: #fff;
+	opacity: 0.6;
+	filter: alpha(opacity = 60);
+	display:none;
+}

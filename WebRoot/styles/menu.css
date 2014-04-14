@@ -1,0 +1,76 @@
+/*a 标签*/
+a:link {
+	/*字体颜色*/
+	COLOR: #000000;
+
+	/*字体大小*/
+	FONT-SIZE: 12px;
+
+	/*链接没下划线 underline有下划线*/
+	TEXT-DECORATION: none
+}
+
+/*已访问过的a标签*/
+a:visited {
+	COLOR: #000000;
+	FONT-SIZE: 12px;
+	TEXT-DECORATION: none
+}
+
+/*鼠标移过时显示的颜色字体*/
+a:hover {
+	COLOR: #006CD9;
+	FONT-SIZE: 12px;
+	TEXT-DECORATION: none
+}
+
+/*菜单背景渐变*/
+BODY {
+	FONT-SIZE: 12px;
+
+	/*菜单背景渐变*/
+	/*FILTER: Alpha( style=1,opacity=40,finishOpacity=100,startX=65,finishX= 85,startY=50,finishY=100);*/
+
+	/*菜单背景颜色*/
+	background-color: skyblue;
+}
+
+/*菜单TD样式*/
+td {
+	/*菜单字体*/
+	FONT-SIZE: 12px; 
+
+	/*设置行间距*/
+	line-height: 150%;
+
+	BACKGROUND-COLOR: #F0F0E5;	
+	HEIGHT: 100%;
+	vertical-align: middle;
+}
+
+/*没登录时的样式*/
+p{
+  text-align: center;
+  font-weight: bold;
+  padding: 0.8em;
+  color: #000000;
+  background: #4682b4;
+  FONT-SIZE: 12px; 
+}
+
+#hao{
+BORDER-RIGHT: #fff 0px inset;
+PADDING-RIGHT: 1px;
+BORDER-TOP: #fff 0px inset;
+PADDING-LEFT: 5px;
+color: #000000;
+BACKGROUND: #b0c4de;
+PADDING-BOTTOM: 5px;
+OVERFLOW: auto;
+BORDER-LEFT: #fff 0px inset;
+PADDING-TOP: 5px;
+BORDER-BOTTOM: #fff 0px inset;
+width:180px;
+height:100%;
+FONT-SIZE: 12px; 
+}
